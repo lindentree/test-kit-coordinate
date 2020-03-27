@@ -35,6 +35,7 @@ const UserForm = (props) => {
           name="address"
           onChange={props.handleInputChange}
         />
+        <button type="submit" value="submit">REGISTER</button>
       </form>
     </div>
   )
