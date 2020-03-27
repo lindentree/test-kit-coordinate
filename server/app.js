@@ -1,13 +1,12 @@
 var express = require('express');
-
 const port = 8080;
 var cors = require("cors");
-
+const connectDB = require('./db/index');
 var testServerRouter = require('./routes/testServer')
 // var bodyParser = require('body-parser');
 
 var app = express();
-
+connectDB();
 
 
 app.use(cors());
