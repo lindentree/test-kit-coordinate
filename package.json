@@ -17,6 +17,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "watch": "npm-watch",
+    "node": "nodemon ./server/app.js",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
