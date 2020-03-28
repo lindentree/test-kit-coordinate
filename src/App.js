@@ -27,9 +27,6 @@ componentDidMount () {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-        </header>
         <SimpleMap> </SimpleMap>
         <p> {this.state.apiResponse}</p>
       </div>

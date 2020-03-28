@@ -1,54 +1,47 @@
 import React, { Component } from 'react';
 import GoogleMapReact from 'google-map-react';
 
-// const AnyReactComponent = ({ text }) => <div>{text}</div>;
- 
-class SimpleMap extends Component {
+const AnyReactComponent = ({ text }) => (
+  <div style={{
+    color: 'white', 
+    background: 'grey',
+    padding: '15px 10px',
+    display: 'inline-flex',
+    textAlign: 'center',
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderRadius: '100%',
+    transform: 'translate(-50%, -50%)'
+  }}>
+    {text}
+  </div>
+);
 
-  constructor(props) {
-    super(props) 
-    this.state = {
-      locations: [],
-      some: ''
-    }
-
-    this.clickMe = this.clickMe.bind(this);
-
-  }
-
+class SimpleMap extends React.Component {
   static defaultProps = {
-    center: {
-      lat: 59.95,
-      lng: 30.33
-    },
+    center: {lat: 59.95, lng: 30.33},
     zoom: 11
   };
 
-  componentDidMount(){
-  }
-
-  clickMe () {
-    console.log('test')
-    // this.setState({
-    // some: 'new state'
-    // })
-  }
- 
   render() {
     return (
-      // Important! Always set the container height explicitly
       <div style={{ height: '100vh', width: '100%' }}>
         <GoogleMapReact
           bootstrapURLKeys={{ key: process.env.REACT_APP_API_KEY }}
           defaultCenter={this.props.center}
           defaultZoom={this.props.zoom}
-          yesIWantToUseGoogleMapApiInternals
         >
-        
+        <AnyReactComponent 
+          lat={59.955413} 
+          lng={30.337844} 
+          text={'Kreyser Avrora'} 
+        />
+      
         </GoogleMapReact>
       </div>
     );
   }
 }
+
  
 export default SimpleMap;
