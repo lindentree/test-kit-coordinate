@@ -3,7 +3,7 @@ import './App.css';
 import axios from 'axios';
 import UserForm from './components/UserForm';
 import ProviderForm from './components/ProviderForm';
-import EmailForm from './components/EmailForm';
+import EmailForm from './components/ContactForm';
 import LandingPage from './components/LandingPage';
 
 class App extends React.Component {
@@ -30,7 +30,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <UserForm />
+        <LandingPage />
         <p> {this.state.apiResponse}</p>
       </div>
     );

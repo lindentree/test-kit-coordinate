@@ -2,15 +2,12 @@ import React from 'react';
 import axios from 'axios';
 import styled from 'styled-components';
 
-class ProviderForm extends React.Component {
+class ContactForm extends React.Component {
   constructor (props) {
     super(props);
     this.state = {
-      testAmounts: '',
-      facilityName: '',
-      address: '',
-      phoneNumber: '',
-      providerList: []
+      email: '',
+      message: ''
     }
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -26,20 +23,9 @@ class ProviderForm extends React.Component {
     e.preventDefault();
     console.log('this.state:', this.state);
 
-    let {testAmounts, facilityName, address, phoneNumber} = this.state;
-    let data = {testAmounts, facilityName, address, phoneNumber};
+    let {email, message} = this.state;
+    let input = {email, message};
     let headers = {'Content-Type': 'application/json'}
-
-    axios.post('/provider', data, {headers: headers})
-      .then(res => {
-        this.setState({
-          testAmounts: testAmounts,
-          facilityName: '',
-          address: '',
-          phoneNumber: '',
-
-        })
-      })
 
     e.target.reset();
   }
@@ -48,30 +34,18 @@ class ProviderForm extends React.Component {
   render() {
     return (
       <Container>
-      <H1>Facility Info Content:</H1>
+      <H1>Contact:</H1>
         <Form onSubmit={this.handleSubmit}>
-          <Label>Test Amounts</Label>
+          <Label>email:</Label>
           <Input
-            type="number"
-            name="testAmounts"
+            type="email"
+            name="email"
             onChange={this.handleInputChange}
           />
-          <Label>Facility Name:</Label>
+          <Label>Message:</Label>
           <Input
             type="text"
-            name="facilityName"
-            onChange={this.handleInputChange}
-          />
-          <Label>Address:</Label>
-          <Input
-            type="text"
-            name="address"
-            onChange={this.handleInputChange}
-          />
-          <Label>Phone Number:</Label>
-          <Input
-            type="number"
-            name="phoneNumber"
+            name="message"
             onChange={this.handleInputChange}
           />
           <Button type="submit" value="submit">Submit</Button>
@@ -81,10 +55,10 @@ class ProviderForm extends React.Component {
   }
 }
 
-export default ProviderForm;
+export default ContactForm;
 
 
-const Button = styled.button`
+const Button = styled.button `
   background-color: #4caf50; /* Green */
   border: none;
   color: white;
@@ -97,18 +71,18 @@ const Button = styled.button`
   align: center;
 `
 
-const Container = styled.div`
+const Container = styled.div `
   width: 50%;
   align: center;
   margin: auto;
   padding: 50px;
 `
 
-const H1 = styled.h1`
+const H1 = styled.h1 `
   text-align: center;
 `
 
-const Input = styled.input`
+const Input = styled.input `
   width: 100%;
   padding: 12px 20px;
   margin: 24px 0;
@@ -119,19 +93,12 @@ const Input = styled.input`
   background-color: white;
 `
 
-const Form = styled.form`
+const Form = styled.form `
   border-radius: 5px;
   background-color: #f2f2f2;
   padding: 20px;
 `
 
-const Label = styled.label`
+const Label = styled.label `
   float: left;
 `
-
-
-/*
-<Button type="submit" value="submit">Direct</Button>
-<Button type="submit" value="submit">Request</Button>
-<Button type="submit" value="submit">Contact</Button>
-*/

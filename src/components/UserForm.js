@@ -6,8 +6,7 @@ class UserForm extends React.Component {
   constructor (props) {
     super(props);
     this.state = {
-      firstName: '',
-      lastName: '',
+      userName: '',
       email: '',
       phone: '',
       address: ''
@@ -26,8 +25,8 @@ class UserForm extends React.Component {
     e.preventDefault();
     console.log('this.state:', this.state);
 
-    let {firstName, lastName, email, phone, address} = this.state;
-    let input = {firstName, lastName, email, phone, address};
+    let {userName, email, phone, address} = this.state;
+    let input = {userName, email, phone, address};
     let headers = {'Content-Type': 'application/json'}
     axios.post('/user', input, {headers: headers})
       .then(res => {
@@ -42,16 +41,10 @@ class UserForm extends React.Component {
       <Container>
         <H1>User information</H1>
         <Form onSubmit={this.handleSubmit}>
-          <Label>First Name:</Label>
+          <Label>User Name:</Label>
           <Input
             type="text"
-            name="firstName"
-            onChange={this.handleInputChange}
-          />
-          <Label>Last Name:</Label>
-          <Input
-            type="text"
-            name="lastName"
+            name="userName"
             onChange={this.handleInputChange}
           />
           <Label>Email:</Label>
@@ -89,11 +82,11 @@ const Button = styled.button`
   text-align: center;
   text-decoration: none;
   display: inline-block;
+  border-radius: 4px;
   font-size: 16px;
   align: center;
-`
+`;
   const Container = styled.div`
-
     width: 50%;
     align: center;
     margin: auto;
@@ -122,6 +115,5 @@ const Button = styled.button`
   `
 
   const Label = styled.label`
-    align: left;
-    text-align: left;
+    float: left;
   `
