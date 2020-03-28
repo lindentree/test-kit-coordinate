@@ -8,7 +8,8 @@ class ProviderForm extends React.Component {
       testAmounts: '',
       facilityName: '',
       address: '',
-      phoneNumber: ''
+      phoneNumber: '',
+      providerList: []
     }
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -35,7 +36,7 @@ class ProviderForm extends React.Component {
           facilityName: '',
           address: '',
           phoneNumber: '',
-          providerList: []
+
         })
       })
 
