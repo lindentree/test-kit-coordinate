@@ -33,7 +33,7 @@ class UserForm extends React.Component {
         console.log(res)
       })
 
-
+      e.target.reset();
   }
 
   render() {
@@ -59,7 +59,7 @@ class UserForm extends React.Component {
             name="email"
             onChange={this.handleInputChange}
           />
-          <label>Phone No:</label>
+          <label>Phone Number:</label>
           <input
             type="number"
             name="phone"

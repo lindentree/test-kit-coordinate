@@ -4,9 +4,10 @@ class ProviderForm extends React.Component {
   constructor (props) {
     super(props);
     this.state = {
+      testAmounts: '',
       facilityName: '',
       address: '',
-      availableKits: ''
+      phoneNumber: ''
     }
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -22,10 +23,11 @@ class ProviderForm extends React.Component {
     e.preventDefault();
     console.log('this.state:', this.state);
 
-    let {facilityName, address, availableKits} = this.state;
-    let input = {facilityName, address, availableKits};
+    let {testAmounts, facilityName, address, phoneNumber} = this.state;
+    let input = {testAmounts, facilityName, address, phoneNumber};
     let headers = {'Content-Type': 'application/json'}
-    console.log('input:', input);
+
+    e.target.reset();
   }
 
 
@@ -35,10 +37,16 @@ class ProviderForm extends React.Component {
       <div>
       <h3>Facility Info Content:</h3>
         <form onSubmit={this.handleSubmit}>
+          <label>Test Amounts</label>
+          <input
+            type="number"
+            name="testAmounts"
+            onChange={this.handleInputChange}
+          />
           <label>Facility Name:</label>
           <input
             type="text"
-            name="name"
+            name="facilityName"
             onChange={this.handleInputChange}
           />
           <label>Address:</label>
@@ -47,10 +55,10 @@ class ProviderForm extends React.Component {
             name="address"
             onChange={this.handleInputChange}
           />
-          <label>Available Kits:</label>
+          <label>Phone Number:</label>
           <input
-            type="text"
-            name="availableKits"
+            type="number"
+            name="phoneNumber"
             onChange={this.handleInputChange}
           />
           <button type="submit" value="submit">Submit</button>

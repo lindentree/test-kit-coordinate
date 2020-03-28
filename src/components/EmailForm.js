@@ -24,7 +24,8 @@ class EmailForm extends React.Component {
     let {email, message} = this.state;
     let input = {email, message};
     let headers = {'Content-Type': 'application/json'}
-    console.log('input:', input);
+
+    e.target.reset();
   }
 
 
