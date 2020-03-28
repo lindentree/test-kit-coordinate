@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from 'axios';
 
 class ProviderForm extends React.Component {
   constructor (props) {
@@ -24,12 +25,22 @@ class ProviderForm extends React.Component {
     console.log('this.state:', this.state);
 
     let {testAmounts, facilityName, address, phoneNumber} = this.state;
-    let input = {testAmounts, facilityName, address, phoneNumber};
+    let data = {testAmounts, facilityName, address, phoneNumber};
     let headers = {'Content-Type': 'application/json'}
+
+    axios.post('/provider', data, {headers: headers})
+      .then(res => {
+        this.setState({
+          testAmounts: testAmounts,
+          facilityName: '',
+          address: '',
+          phoneNumber: '',
+          providerList: []
+        })
+      })
 
     e.target.reset();
   }
-
 
 
   render() {
