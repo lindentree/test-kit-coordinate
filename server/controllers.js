@@ -1,7 +1,7 @@
-const db = require('./db/index');
+const providers = require('./db/providers');
 
 let addFacility = (req, res) => {
-  db.addFacility(req, (err, data) => {
+  providers.addFacility(req, (err, data) => {
     if (err) {
       res.status(400).end('Sorry')
     } else {
@@ -11,7 +11,7 @@ let addFacility = (req, res) => {
 };
 
 let getFacilities = (req, res) => {
-  db.getAll((err, data) => {
+  providers.getAll((err, data) => {
     if (err) {
       res.status(200).send('Sorry, error on get')
     } else {
