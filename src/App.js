@@ -3,6 +3,7 @@ import './App.css';
 import axios from 'axios';
 import UserForm from './components/UserForm';
 import ProviderForm from './components/ProviderForm';
+import EmailForm from './components/EmailForm';
 
 class App extends React.Component {
   constructor(props) {
@@ -29,6 +30,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <ProviderForm />
+        <EmailForm />
         <UserForm />
         <p> {this.state.apiResponse}</p>
       </div>
