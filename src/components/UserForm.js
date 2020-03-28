@@ -39,44 +39,89 @@ class UserForm extends React.Component {
 
   render() {
     return (
-      <div>
-        <h3>User information</h3>
-        <form onSubmit={this.handleSubmit}>
-          <label>First Name:</label>
-          <input
+      <Container>
+        <H1>User information</H1>
+        <Form onSubmit={this.handleSubmit}>
+          <Label>First Name:</Label>
+          <Input
             type="text"
             name="firstName"
             onChange={this.handleInputChange}
           />
-          <label>Last Name:</label>
-          <input
+          <Label>Last Name:</Label>
+          <Input
             type="text"
             name="lastName"
             onChange={this.handleInputChange}
           />
-          <label>Email:</label>
-          <input
+          <Label>Email:</Label>
+          <Input
             type="email"
             name="email"
             onChange={this.handleInputChange}
           />
-          <label>Phone Number:</label>
-          <input
+          <Label>Phone Number:</Label>
+          <Input
             type="number"
             name="phone"
             onChange={this.handleInputChange}
           />
-          <label>Address</label>
-          <input
+          <Label>Address</Label>
+          <Input
             type="text"
             name="address"
             onChange={this.handleInputChange}
           />
-          <button type="submit" value="submit">Submit</button>
-        </form>
-      </div>
+          <Button type="submit" value="submit">Submit</Button>
+        </Form>
+      </Container>
     )
   }
 }
 
 export default UserForm;
+
+const Button = styled.button`
+  background-color: #4caf50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  align: center;
+`
+  const Container = styled.div`
+
+    width: 50%;
+    align: center;
+    margin: auto;
+    padding: 50px;
+  `
+
+  const H1 = styled.h1`
+    text-align:center;
+  `
+
+  const Input = styled.input`
+    width: 100%;
+    padding: 12px 20px;
+    margin: 24px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: white;
+  `
+
+  const Form = styled.form`
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+  `
+
+  const Label = styled.label`
+    align: left;
+    text-align: left;
+  `
