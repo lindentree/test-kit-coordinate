@@ -12,38 +12,38 @@ export const Button = styled.button `
   border-radius: 4px;
   font-size: 16px;
   align: center;
-`;
+`
 export const Container = styled.div `
-    width: 50%;
-    align: center;
-    margin: auto;
-    padding: 50px;
-  `
+  width: 50%;
+  align: center;
+  margin: auto;
+  padding: 50px 0 0 0;
+`
 
 export const H1 = styled.h1 `
-    text-align:center;
-  `
+  text-align:center;
+`
 
 export const Input = styled.input `
-    width: 100%;
-    padding: 12px 20px;
-    margin: 24px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-    background-color: white;
-  `
+  width: 100%;
+  padding: 12px 20px;
+  margin: 24px 0;
+  display: inline-block;
+  border: .1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  background-color: white;
+`
 
 export const Form = styled.form `
-    border-radius: 5px;
-    background-color: #f2f2f2;
-    padding: 20px;
-  `
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+`
 
 export const Label = styled.label `
-    float: left;
-  `
+  float: left;
+`
 
 export const NavContainer = styled.div`
   background-color: #303f9f;

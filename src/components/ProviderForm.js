@@ -15,8 +15,7 @@ class ProviderForm extends React.Component {
       testsAvailable: '',
       currentStatus: '',
       testCapacity: '',
-      testCriteria: '',
-      providerList: []
+      testCriteria: ''
     };
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -31,19 +30,14 @@ class ProviderForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     console.log('this.state:', this.state);
-
     let {providerId, providerName, address, email, phoneNumber, operatingHours, testsAvailable, currentStatus, testCapacity, testCriteria} = this.state;
     let data = {providerId, providerName, address, email, phoneNumber, operatingHours, testsAvailable, currentStatus, testCapacity, testCriteria};
     let headers = {'Content-Type': 'application/json'}
 
     axios.post('/provider', data, {headers: headers})
       .then(res => {
-        console.log('Provider form handle sumbit clicked');
-        let providerList = this.state.providerList;
-        providerList.concat(res.data);
-        this.setState({
-          providerList: providerList
-        });
+        console.log('axios.post:', data);
+
       })
       .catch(err => {
         console.log('fail to post:', err);
@@ -59,7 +53,7 @@ class ProviderForm extends React.Component {
         <H1>Facility Info Content:</H1>
 
         <Form onSubmit={this.handleSubmit}>
-          <Label>Provider Id</Label>
+          <Label>Provider Id:</Label>
           <Input type="number" name="providerId" onChange={this.handleInputChange}
           />
 
@@ -76,19 +70,19 @@ class ProviderForm extends React.Component {
           <Label>Phone Number:</Label>
           <Input type="number" name="phoneNumber" onChange={this.handleInputChange} />
 
-          <Label>Operating Hours</Label>
+          <Label>Operating Hours:</Label>
           <Input type="text" name="operatingHours" onChange={this.handleInputChange} />
 
-          <Label>Tests Available</Label>
+          <Label>Tests Available:</Label>
           <Input type="number" name="testsAvailable" onChange={this.handleInputChange} />
 
-          <Label>Current Status</Label>
+          <Label>Current Status:</Label>
           <Input type="text" name="currentStatus" onChange={this.handleInputChange} />
 
-          <Label>Test Capacity</Label>
+          <Label>Test Capacity:</Label>
           <Input type="text" name="testCapacity" onChange={this.handleInputChange} />
 
-          <Label>Test Criteria</Label>
+          <Label>Test Criteria:</Label>
           <Input type="text" name="testCriteria" onChange={this.handleInputChange} />
 
           <Button type="submit" value="submit"> Submit </Button>
@@ -103,17 +97,6 @@ export default ProviderForm;
 
 /*
 
-        this.setState({
-          providerId: '',
-          providerName: '',
-          address: '',
-          email: '',
-          phoneNumber: '',
-          operatingHours: '',
-          testsAvailable: '',
-          currentStatus: '',
-          testCapacity: '',
-          testCriteria: ''
-        });
+
 
 */
