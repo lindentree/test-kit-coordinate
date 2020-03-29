@@ -9,7 +9,6 @@ const ProviderDashboard = () => {
             <SimpleMap>
             </SimpleMap>
 
-
         </div>        
 
 
