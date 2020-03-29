@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-var providers = mongoose.Schema({
+const providers = mongoose.Schema({
   id: Number, //user input
   provider_name: String,
   address: String,
@@ -14,9 +14,9 @@ var providers = mongoose.Schema({
   miscellaneous_materials: Array
 });
 
-var Provider = mongoose.model('Provider', providers);
+const Provider = mongoose.model('Provider', providers);
 
-var getAll = (callback) => {
+const getAll = (callback) => {
   Provider.find({}, (err, providers) => {
     if(err) {
       callback(err, null);
@@ -26,7 +26,17 @@ var getAll = (callback) => {
   });
 };
 
-var addProvider = (obj, callback) => {
+const getOne = (id, callback) => {
+  Provider.findOne({'id': id}, (err, provider) => {
+    if (err) {
+      callback(err, null)
+    } else {
+      callback(null, provider)
+    }
+  })
+};
+
+const addProvider = (obj, callback) => {
   let provider = new Provider(obj);
   provider.save((err, data) => {
     if (err) {
@@ -37,18 +47,21 @@ var addProvider = (obj, callback) => {
   })
 }
 
-var getOne = (id, callback) => {
-  Provider.findOne({'id': id}, (err, provider) => {
-    if (err) {
-      callback(err, null)
-    } else {
-      callback(null, provider)
-    }
-  })
-};
+const updateProvider = (id, obj, callback) => {
+  for (var key in obj) {
+    Provider.findOneAndUpdate({id:id}, {$set: {key: obj[key]}}, (err, data) => {
+      if (err) {
+        callback(err, null)
+      } else {
+        callback(null, data)
+      }
+    })
+  }
+}
 
 module.exports = {
   getAll,
   addProvider,
-  getOne
+  getOne,
+  updateProvider
 };

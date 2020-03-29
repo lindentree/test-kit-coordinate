@@ -26,3 +26,5 @@ yarn-error.log*
 #backend
 server/node_modules
 server/package-lock.json
+
+config.js

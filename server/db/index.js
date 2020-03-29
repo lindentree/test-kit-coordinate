@@ -1,7 +1,6 @@
 const mongoose = require('mongoose');
-
-const URI = 'mongodb+srv://hien:testkits@covid-test-kits-h2gnb.mongodb.net/test?retryWrites=true&w=majority';
-mongoose.connect(URI,
+const config = require('../../config')
+const connectDb = () => mongoose.connect(config.URI,
   { useNewUrlParser: true,
   useUnifiedTopology: true });
 
@@ -14,3 +13,5 @@ db.on('error', function() {
 db.once('open', function() {
   console.log('mongoose connected sucessfully');
 })
+
+module.exports = connectDb;

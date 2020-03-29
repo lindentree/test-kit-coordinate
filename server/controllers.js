@@ -21,7 +21,7 @@ let getProviders = (req, res) => {
 }
 
 let getProvider = (req, res) => {
-  providers.getOne((err, data) => {
+  providers.getOne(req, (err, data) => {
     if (err) {
       res.status(400).send('cant get one')
     } else {
@@ -30,8 +30,19 @@ let getProvider = (req, res) => {
   })
 }
 
+let updateProvider = (req, res) => {
+  providers.updateProvider(req.id, req.update, (err, data) => {
+    if (err) {
+      res.status(400).send('cant get one')
+    } else {
+      res.status(200).send(getProvider(req.id, res))
+    }
+  })
+}
+
 module.exports = {
   addProvider,
   getProviders,
-  getProvider
+  getProvider,
+  updateProvider
 }
