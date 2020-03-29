@@ -12,9 +12,10 @@ export const Button = styled.button `
   border-radius: 4px;
   font-size: 16px;
   align: center;
+  margin: 30px;
 `
 export const Container = styled.div `
-  width: 50%;
+  width: 60%;
   align: center;
   margin: auto;
   padding: 50px 0 0 0;
@@ -26,8 +27,8 @@ export const H1 = styled.h1 `
 
 export const Input = styled.input `
   width: 100%;
-  padding: 12px 20px;
-  margin: 24px 0;
+  padding: 10px 20px;
+  margin: 20px 0;
   display: inline-block;
   border: .1px solid #ccc;
   border-radius: 4px;
@@ -43,6 +44,8 @@ export const Form = styled.form `
 
 export const Label = styled.label `
   float: left;
+  text-align: left;
+  width: 550px;
 `
 
 export const NavContainer = styled.div`
@@ -71,5 +74,11 @@ export const Li = styled.li`
   font-weight: bold;
 `
 
-export const Menu = css`
+export const Select = styled.select`
+  background-color: white;
+  margin: 20px 0 20px 0;
+  border: 0.1px solid white;
+  width: 505px;
+  height: 35px;
+  float: left;
 `

@@ -1,8 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-import TestCriteria from './TestCapacity';
-import TestCapacity from './TestCapacity';
-import {Button, Container, H1, Input, Form, Label} from './style.js';
+import {Button, Container, H1, Input, Form, Label, Select} from './style.js';
 
 
 class ProviderForm extends React.Component {
@@ -49,7 +47,6 @@ class ProviderForm extends React.Component {
     e.target.reset();
   }
 
-
   render() {
     return (
       <Container>
@@ -83,10 +80,16 @@ class ProviderForm extends React.Component {
           <Input type="text" name="currentStatus" onChange={this.handleInputChange} />
 
           <Label>Test Capacity:</Label>
-          <Input type="text" name="testCapacity" onChange={this.handleInputChange} />
+          <Select value={this.state.value} onChange={this.handleInputChange}>
+            <option value="low">Low</option>
+            <option value="medium">Medium</option>
+            <option value="high">High</option>
+          </Select>
 
           <Label>Test Criteria:</Label>
-          <Input type="text" name="testCriteria" onChange={this.handleInputChange} />
+          <Select value={this.state.value} onChange={this.handleInputChange}>
+            <option selected value="low" >Priority 1</option>
+          </Select>
 
           <Button type="submit" value="submit"> Submit </Button>
         </Form>
