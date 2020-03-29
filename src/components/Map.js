@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import GoogleMapReact from 'google-map-react';
+import LocationMarker from './LocationMarker'
 
 const AnyReactComponent = ({ text }) => (
   <div style={{
@@ -31,10 +32,10 @@ class SimpleMap extends React.Component {
           defaultCenter={this.props.center}
           defaultZoom={this.props.zoom}
         >
-        <AnyReactComponent 
+        <LocationMarker 
           lat={59.955413} 
           lng={30.337844} 
-          text={'Kreyser Avrora'} 
+          text={'Testing Center'} 
         />
       
         </GoogleMapReact>
