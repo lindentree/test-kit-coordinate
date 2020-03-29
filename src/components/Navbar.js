@@ -1,10 +1,11 @@
 import React from 'react';
 import {Link, NavLink} from 'react-router-dom';
-import styled from 'styled-components';
+import {Button, Container, H1, Input, Form, Label} from './style';
 
 const Navbar =() => {
-  const underline = { textDecoration: "none" };
+  const underline = {textDecoration: "none"};
   const textColor = {color: 'white'};
+
   return (
     <Container>
     <Title>COVID-19 Test Kits Availability</Title>
@@ -38,22 +39,23 @@ const Container = styled.div `
 const Title = styled.h1 `
   float: left;
   color: white;
-  margin-left: 30px;
+  margin-left: 20px;
 `
 
 const Ul = styled.ul`
   list-style: none;
   float: right;
-  font-size: 35px;
-  margin: 15px;
+  font-size: 30px;
+  margin: 15px 5px;
 
 `
 
 const Li = styled.li`
   color: #e8eaf6;
   display: inline-block;
-  padding: 0 30px;
-  margin: 0;
+  padding: 5px 10px 0;
+  margin-right: 10px;
+  font-weight: bold;
 `
 
 
