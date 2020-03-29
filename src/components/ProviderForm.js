@@ -1,6 +1,9 @@
 import React from 'react';
 import axios from 'axios';
+import TestCriteria from './TestCapacity';
+import TestCapacity from './TestCapacity';
 import {Button, Container, H1, Input, Form, Label} from './style.js';
+
 
 class ProviderForm extends React.Component {
   constructor (props) {

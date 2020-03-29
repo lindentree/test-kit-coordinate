@@ -1,5 +1,5 @@
 
-import styled from 'styled-components';
+import styled, {css} from 'styled-components';
 
 export const Button = styled.button `
   background-color: #4caf50; /* Green */
@@ -69,4 +69,7 @@ export const Li = styled.li`
   padding: 5px 10px 0;
   margin-right: 10px;
   font-weight: bold;
+`
+
+export const Menu = css`
 `
