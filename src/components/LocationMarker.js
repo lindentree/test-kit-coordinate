@@ -13,7 +13,7 @@ const LocationMarker = () => {
     borderRadius: '100%',
     transform: 'translate(-50%, -50%)'
   }}>
-     <img src={icon} alt="Icon" />
+     <img src={icon} width={30} height={30} alt="Icon" />
   </div>
   )
 }

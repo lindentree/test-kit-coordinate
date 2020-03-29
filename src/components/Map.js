@@ -20,8 +20,8 @@ const AnyReactComponent = ({ text }) => (
 
 class SimpleMap extends React.Component {
   static defaultProps = {
-    center: {lat: 59.95, lng: 30.33},
-    zoom: 11
+    center: {lat: 37.8272, lng: -122.2913},
+    zoom: 9
   };
 
   render() {
@@ -33,8 +33,8 @@ class SimpleMap extends React.Component {
           defaultZoom={this.props.zoom}
         >
         <LocationMarker 
-          lat={59.955413} 
-          lng={30.337844} 
+          lat={37.632780} 
+          lng={-122.064390} 
           text={'Testing Center'} 
         />
       
