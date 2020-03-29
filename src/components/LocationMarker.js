@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import icon from '../hospital.jpg'
+import icon from '../Icn_Hospital.png'
 
 const LocationMarker = () => {
   return (

@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { Component } from 'react';
 import SimpleMap from './Map'
 import styled from 'styled-components';
 
 
-const ProviderDashboard = () => {
-  return (
+class ProviderDashboard extends Component {
+
+
+  render() {
+    return (
         <div>
             <SimpleMap>
             </SimpleMap>
@@ -12,6 +15,9 @@ const ProviderDashboard = () => {
         </div>        
 
     )
+
+  }
+  
 }
 
 export default ProviderDashboard;
