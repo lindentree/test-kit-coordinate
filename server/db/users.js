@@ -7,7 +7,7 @@ const users = mongoose.Schema({
   phone_number: String,
   address: String
 })
-const User = mongoose.model('User', users)
+const User = mongoose.model('User', users);
 
 // var getAll = function(callback) {
 //   User.find({}, function(err, users) {

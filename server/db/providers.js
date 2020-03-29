@@ -16,8 +16,8 @@ var providers = mongoose.Schema({
 
 var Provider = mongoose.model('Provider', providers);
 
-var getAll = function(callback) {
-  Provider.find({}, function(err, proviers) {
+var getAll = (callback) => {
+  Provider.find({}, (err, providers) => {
     if(err) {
       callback(err, null);
     } else {
@@ -37,7 +37,18 @@ var addProvider = (obj, callback) => {
   })
 }
 
+var getOne = (id, callback) => {
+  Provider.findOne({'id': id}, (err, provider) => {
+    if (err) {
+      callback(err, null)
+    } else {
+      callback(null, provider)
+    }
+  })
+};
+
 module.exports = {
   getAll,
-  addProvider
+  addProvider,
+  getOne
 };
