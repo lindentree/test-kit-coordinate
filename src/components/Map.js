@@ -12,7 +12,8 @@ class SimpleMap extends Component {
         lat: 37.8272,
         lng: -122.2913
       },
-      zoom: 9
+      zoom: 9,
+      locations: []
     }
   }
 

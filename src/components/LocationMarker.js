@@ -14,7 +14,7 @@ const LocationMarker = ({text}) => {
         borderRadius: '100%',
         transform: 'translate(-50%, -50%)'
       }}>
-      <img src={icon} width={20} height={20} alt="Icon" />
+      <img src={icon} width={20} height={20} border-radius={15} border={12} border-color={'green'} alt="Icon" />
       {text}
     </div>
     
