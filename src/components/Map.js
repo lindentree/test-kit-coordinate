@@ -3,23 +3,31 @@ import GoogleMapReact from 'google-map-react';
 import LocationMarker from './LocationMarker'
 
 class SimpleMap extends Component {
-  static defaultProps = {
-    center: {lat: 37.8272, lng: -122.2913},
-    zoom: 9
-  };
+
+  constructor(props) {
+
+    super(props)
+    this.state = {
+      center: {
+        lat: 37.8272,
+        lng: -122.2913
+      },
+      zoom: 9
+    }
+  }
 
   render() {
     return (
       <div style={{ height: '100vh', width: '100%' }}>
         <GoogleMapReact
           bootstrapURLKeys={{ key: process.env.REACT_APP_API_KEY }}
-          defaultCenter={this.props.center}
-          defaultZoom={this.props.zoom}
+          defaultCenter={this.state.center}
+          defaultZoom={this.state.zoom}
         >
         <LocationMarker 
           lat={37.632780} 
           lng={-122.064390} 
-          text={'Testing Center'} 
+          text={'COVID-19 Testing Center'} 
         />
       
         </GoogleMapReact>
@@ -27,6 +35,7 @@ class SimpleMap extends Component {
     );
   }
 }
+
 
  
 export default SimpleMap;
