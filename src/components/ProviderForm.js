@@ -6,16 +6,17 @@ class ProviderForm extends React.Component {
   constructor (props) {
     super(props);
     this.state = {
-      providerId: "",
-      providerName: "",
-      address: "",
-      email: "",
-      phoneNumber: "",
-      operatingHours: "",
-      testsAvailable: "",
-      currentStatus: "",
-      testCapacity: "",
-      testCriteria: ""
+      providerId: '',
+      providerName: '',
+      address: '',
+      email: '',
+      phoneNumber: '',
+      operatingHours: '',
+      testsAvailable: '',
+      currentStatus: '',
+      testCapacity: '',
+      testCriteria: '',
+      providerList: []
     };
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -37,18 +38,15 @@ class ProviderForm extends React.Component {
 
     axios.post('/provider', data, {headers: headers})
       .then(res => {
+        console.log('Provider form handle sumbit clicked');
+        let providerList = this.state.providerList;
+        providerList.concat(res.data);
         this.setState({
-          providerId: '',
-          providerName: '',
-          address:'',
-          email: '',
-          phoneNumber: '',
-          operatingHours: '',
-          testsAvailable: '',
-          currentStatus: '',
-          testCapacity: '',
-          testCriteria: ''
+          providerList: providerList
         });
+      })
+      .catch(err => {
+        console.log('fail to post:', err);
       })
 
     e.target.reset();
@@ -101,3 +99,21 @@ class ProviderForm extends React.Component {
 }
 
 export default ProviderForm;
+
+
+/*
+
+        this.setState({
+          providerId: '',
+          providerName: '',
+          address: '',
+          email: '',
+          phoneNumber: '',
+          operatingHours: '',
+          testsAvailable: '',
+          currentStatus: '',
+          testCapacity: '',
+          testCriteria: ''
+        });
+
+*/
