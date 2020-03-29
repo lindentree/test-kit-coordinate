@@ -44,3 +44,29 @@ export const Form = styled.form `
 export const Label = styled.label `
     float: left;
   `
+
+export const NavContainer = styled.div`
+  background-color: #303f9f;
+  height: 90px;
+`
+
+export const Title = styled.h1`
+  float: left;
+  color: white;
+  margin-left: 20px;
+`
+
+export const Ul = styled.ul`
+  list-style: none;
+  float: right;
+  font-size: 30px;
+  margin: 15px 5px;
+`
+
+export const Li = styled.li`
+  color: #e8eaf6;
+  display: inline-block;
+  padding: 5px 10px 0;
+  margin-right: 10px;
+  font-weight: bold;
+`
