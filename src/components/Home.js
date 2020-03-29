@@ -5,8 +5,8 @@ const Home = () => {
   return (
     <Container>
 
-        <h4>Introduce the app</h4>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae repudiandae repellat illo magni eligendi cupiditate voluptates eius nam voluptate. Incidunt nihil ullam quae quia officia quaerat, deserunt eligendi explicabo totam?</p>
+        <h4>Testing</h4>
+        <p>A platform to facilitate COVID-19 testing allocation and coordination</p>
 
     </Container>
   )

@@ -7,7 +7,7 @@ const Navbar =() => {
   const textColor = {color: 'white'};
   return (
     <Container>
-    <Title>COVID-19 Test Kits Availability</Title>
+    <Title>COVID-19 Testing Location Insights</Title>
       <Ul>
         <Li>
           <NavLink to="/" style={{ ...underline, ...textColor }}>
