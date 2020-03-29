@@ -1,7 +1,7 @@
-const db = require('./db/index');
+const providers = require('./db/providers');
 
-let addFacility = (req, res) => {
-  db.addFacility(req, (err, data) => {
+let addProvider = (req, res) => {
+  providers.addProvider(req, (err, data) => {
     if (err) {
       res.status(400).end('Sorry')
     } else {
@@ -10,17 +10,39 @@ let addFacility = (req, res) => {
   })
 };
 
-let getFacilities = (req, res) => {
-  db.getAll((err, data) => {
+let getProviders = (req, res) => {
+  providers.getAll((err, data) => {
     if (err) {
-      res.status(200).send('Sorry, error on get')
+      res.status(400).send('Sorry, error on get')
     } else {
       res.status(200).send(data)
     }
   }) 
 }
 
+let getProvider = (req, res) => {
+  providers.getOne(req, (err, data) => {
+    if (err) {
+      res.status(400).send('cant get one')
+    } else {
+      res.status(200).send(data)
+    }
+  })
+}
+
+let updateProvider = (req, res) => {
+  providers.updateProvider(req.id, req.update, (err, data) => {
+    if (err) {
+      res.status(400).send('cant get one')
+    } else {
+      res.status(200).send(getProvider(req.id, res))
+    }
+  })
+}
+
 module.exports = {
-  addFacility,
-  getFacilities
+  addProvider,
+  getProviders,
+  getProvider,
+  updateProvider
 }
