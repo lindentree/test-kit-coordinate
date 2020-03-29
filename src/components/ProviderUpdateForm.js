@@ -2,7 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import {Button, Container, H1, Input, Form, Label} from './style.js';
 
-class ProviderForm extends React.Component {
+class ProviderUpdateForm extends React.Component {
   constructor (props) {
     super(props);
     this.state = {
@@ -85,11 +85,12 @@ class ProviderForm extends React.Component {
           <Label>Test Criteria:</Label>
           <Input type="text" name="testCriteria" onChange={this.handleInputChange} />
 
-          <Button type="submit" value="submit"> Submit </Button>
+          <Button type="submit" value="submit"> Cancel </Button>
+          <Button type="submit" value="submit"> Save </Button>
         </Form>
       </Container>
     );
   }
 }
 
-export default ProviderForm;
+export default ProviderUpdateForm;
