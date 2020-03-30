@@ -1,12 +1,13 @@
 import React from 'react';
 import {Link, NavLink} from 'react-router-dom';
-import styled from 'styled-components';
+import {Button, Container, H1, Input, Form, Label, Title, Ul, Li, NavContainer} from './style';
 
 const Navbar =() => {
-  const underline = { textDecoration: "none" };
+  const underline = {textDecoration: "none"};
   const textColor = {color: 'white'};
+
   return (
-    <Container>
+    <NavContainer>
     <Title>COVID-19 Testing Location Insights</Title>
       <Ul>
         <Li>
@@ -25,36 +26,12 @@ const Navbar =() => {
           </NavLink>
         </Li>
       </Ul>
-    </Container>
+    </NavContainer>
   );
 }
 
 export default Navbar;
 
-const Container = styled.div `
-  background-color: #303f9f;
-  height: 90px;
-`
-const Title = styled.h1 `
-  float: left;
-  color: white;
-  margin-left: 30px;
-`
-
-const Ul = styled.ul`
-  list-style: none;
-  float: right;
-  font-size: 35px;
-  margin: 15px;
-
-`
-
-const Li = styled.li`
-  color: #e8eaf6;
-  display: inline-block;
-  padding: 0 30px;
-  margin: 0;
-`
 
 
 /*

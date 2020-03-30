@@ -1,4 +1,5 @@
 import React from 'react';
+import {Button, Container, H1, Input, Form, Label} from './style';
 
 const UserInfo = ({user}) => {
   return (

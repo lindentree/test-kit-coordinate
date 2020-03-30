@@ -1,9 +1,8 @@
 import React from 'react';
 import axios from 'axios';
-import {Button, Container, H1, Input, Form, Label, Select} from './style.js';
+import {Button, Container, H1, Input, Form, Label} from './style.js';
 
-
-class ProviderForm extends React.Component {
+class ProviderUpdateForm extends React.Component {
   constructor (props) {
     super(props);
     this.state = {
@@ -47,10 +46,11 @@ class ProviderForm extends React.Component {
     e.target.reset();
   }
 
+
   render() {
     return (
       <Container>
-        <H1>Provider Info Content:</H1>
+        <H1>Provider Information Update:</H1>
 
         <Form onSubmit={this.handleSubmit}>
           <Label>Provider Id:</Label>
@@ -80,22 +80,17 @@ class ProviderForm extends React.Component {
           <Input type="text" name="currentStatus" onChange={this.handleInputChange} />
 
           <Label>Test Capacity:</Label>
-          <Select value={this.state.value} onChange={this.handleInputChange}>
-            <option value="low">Low</option>
-            <option value="medium">Medium</option>
-            <option value="high">High</option>
-          </Select>
+          <Input type="text" name="testCapacity" onChange={this.handleInputChange} />
 
           <Label>Test Criteria:</Label>
-          <Select value={this.state.value} onChange={this.handleInputChange}>
-            <option selected value="low" >Priority 1</option>
-          </Select>
+          <Input type="text" name="testCriteria" onChange={this.handleInputChange} />
 
-          <Button type="submit" value="submit"> Submit </Button>
+          <Button type="submit" value="submit"> Cancel </Button>
+          <Button type="submit" value="submit"> Save </Button>
         </Form>
       </Container>
     );
   }
 }
 
-export default ProviderForm;
+export default ProviderUpdateForm;
