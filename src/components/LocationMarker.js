@@ -21,7 +21,7 @@ const LocationMarker = ({text, provider, show}) => {
         borderRadius: '100%',
         transform: 'translate(-50%, -50%)'
       }}>
-      <img src={marker} width={20} height={20} border-radius={15}border-color={'green'} alt="Icon" />
+      <img src={marker} width={30} height={30} border-radius={15}border-color={'green'} alt="Icon" />
       {text}
        <InfoWindow
       show={show}

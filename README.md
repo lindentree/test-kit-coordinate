@@ -1,3 +1,7 @@
+## COVID-19 TestLine
+
+This is an open-source project intended to facilitate communication and collaboration between disparate test providers in a geographic area. The backend is a MongoDB Atlas cluster deployed on AWS, another backend can be substituted according to specific needs.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
