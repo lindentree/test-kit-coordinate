@@ -2,6 +2,7 @@ import React from 'react';
 import hospital from '../images/Hospital.jpeg';
 import ContactForm from './ContactForm';
 import {Grid, Col, Row, Item} from './styleGrid';
+import './Grid.css';
 
 
 class ProviderInfo extends React.Component {
@@ -14,39 +15,57 @@ class ProviderInfo extends React.Component {
 
   render() {
     return (
-        <Grid>
-          <Item>
+        <div className="container">
+          <div className="item item--1">
             Item 1
             <h1>Provider Name</h1>
             <p>Address</p>
             <p>Operation Hours</p>
             <p>Website Link</p>
-          </Item>
+          </div>
 
-          <Item>
+          <div className="item item--2">
+            Item 2
             <h3>Anouncement</h3>
             <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamco.
             </p>
-          </Item>
+          </div>
 
-          <Item>
+          <div className="item item--3">
+            Item 3
             <h3>Stats</h3>
             <p>Testing Criteria: Priority1 </p>
             <p>Testing Capacity: </p>
             <p>General Test Ratio: </p>
             <p>Other: </p>
-          </Item>
+          </div>
 
-          <Item>
+          <div className="item item--4">
             Item 4
             <h2>Contact Form</h2>
             <h4>Phone Number: </h4>
             <div>CALL CLINIC</div>
             <ContactForm />
-          </Item>
+          </div>
 
-        </Grid>
+          <div className="item item--5">
+            Item 5
+            <h2>Contact Form</h2>
+            <h4>Phone Number: </h4>
+            <div>CALL CLINIC</div>
+            <ContactForm />
+          </div>
+
+          <div className="item item--6">
+            Item 6
+            <h2>Contact Form</h2>
+            <h4>Phone Number: </h4>
+            <div>CALL CLINIC</div>
+            <ContactForm />
+          </div>
+
+        </div>
 
     )
   }
