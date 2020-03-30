@@ -71,9 +71,11 @@ testing_criteria: "Priority 1",
 }
 
 
-
-
 ];
+
+//101 Grove St, San Francisco, CA 94102 SF Public Health
+// 1346 Saratoga Dr, San Mateo, CA 94403 San Mateo Event Center
+//3333 California St, San Francisco, CA 94118 UCSF Laurel Heights
 
 export default TestProviders
 
