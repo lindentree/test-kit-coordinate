@@ -30,7 +30,7 @@ class ProviderForm extends React.Component {
     let data = {testAmounts, facilityName, address, phoneNumber};
     let headers = {'Content-Type': 'application/json'}
 
-    axios.post('/provider', data, {headers: headers})
+    axios.post('http://localhost:8080/addProvider/', data, {headers: headers})
       .then(res => {
         this.setState({
           testAmounts: testAmounts,

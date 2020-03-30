@@ -18,6 +18,7 @@ app.get('/', (req, res) => res.send('Hello world'))
 app.use('/testServer/', testServerRouter.testSmall)
 
 app.post('/addProvider/', (req, res) => {
+  console.log('hello');
   controllers.addProvider(req.body, res)
 });
 
@@ -31,6 +32,10 @@ app.get('/getProvider/', (req, res) => {
 
 app.post('/updateProvider/', (req, res) => {
   controllers.updateProvider(req, res)
+})
+
+app.post('/user/', (req, res) => {
+  controllers.addUser(req,res)
 })
 
 app.listen(port, () => console.log(`Im listening on ${port}`))

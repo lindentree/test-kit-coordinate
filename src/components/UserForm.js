@@ -28,7 +28,7 @@ class UserForm extends React.Component {
     let {userName, email, phone, address} = this.state;
     let input = {userName, email, phone, address};
     let headers = {'Content-Type': 'application/json'}
-    axios.post('/user', input, {headers: headers})
+    axios.post('http://localhost:8080/user/', input, {headers: headers})
       .then(res => {
         console.log(res)
       })

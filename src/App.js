@@ -16,16 +16,16 @@ class App extends React.Component {
   }
 
   componentDidMount () {
-    axios.get('http://localhost:8080/testServer/')
-    .then((response) => {
-      this.setState({
-        apiResponse: response.data
-      })
-    })
-    .catch(function (error) {
-      // handle error
-      console.log(error);
-    })
+    // axios.get('http://localhost:8080/testServer/')
+    // .then((response) => {
+    //   this.setState({
+    //     apiResponse: response.data
+    //   })
+    // })
+    // .catch(function (error) {
+    //   // handle error
+    //   console.log(error);
+    // })
   }
 
   render() {

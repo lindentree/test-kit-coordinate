@@ -1,4 +1,5 @@
 const providers = require('./db/providers');
+const add = require('./db/users');
 
 let addProvider = (req, res) => {
   providers.addProvider(req, (err, data) => {
@@ -35,7 +36,17 @@ let updateProvider = (req, res) => {
     if (err) {
       res.status(400).send('cant get one')
     } else {
-      res.status(200).send(getProvider(req.id, res))
+      res.status(200).send(data)
+    }
+  })
+}
+
+let addUser = (req, res) => {
+  add(req.body, (err, data) => {
+    if (err) {
+      res.status(400).end('Sorry')
+    } else {
+      res.status(200).send('save')
     }
   })
 }
@@ -44,5 +55,6 @@ module.exports = {
   addProvider,
   getProviders,
   getProvider,
-  updateProvider
+  updateProvider,
+  addUser
 }
