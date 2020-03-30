@@ -5,8 +5,9 @@ const Home = () => {
   return (
     <Container>
 
-        <h4>Testing</h4>
-        <p>A platform to facilitate COVID-19 testing allocation and coordination</p>
+        <h4>About Us</h4>
+        <p>This is a platform to facilitate COVID-19 testing allocation and coordination</p>
+        <p>Sign up with your clinic's info or log-in to view nearby test locations and their status</p>
 
     </Container>
   )

@@ -50,7 +50,7 @@ class ProviderForm extends React.Component {
   render() {
     return (
       <Container>
-        <H1>Provider Info Content:</H1>
+        <H1>Provider Sign-Up:</H1>
 
         <Form onSubmit={this.handleSubmit}>
           <Label>Provider Id:</Label>
