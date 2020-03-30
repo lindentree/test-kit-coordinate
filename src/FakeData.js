@@ -99,6 +99,26 @@ testing_criteria: "Priority 1",
    ["samples", false],
    ["reagents", false]
  ]
+},
+{
+  id:6,
+  provider_name: "Highland Hospital",
+ address:  "1411 E 31st St, Oakland, CA 94602",
+phone_number: "510-583-4949",
+email:"",
+operating_hours:[["Tuesday", "9-6"], ["Wednesday", "9-6"]],
+geolocation: [37.799234, -122.231199],
+tests_available: 58,
+current_status: "normal",
+testing_capacity: "medium",
+testing_criteria: "Priority 1",
+ needed_materials: [
+   ["swabs", false], 
+   ["gloves", false], 
+   ["sample_collection_tubes", false],
+   ["samples", false],
+   ["reagents", false]
+ ]
 }
 
 

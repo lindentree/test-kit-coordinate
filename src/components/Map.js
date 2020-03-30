@@ -8,6 +8,7 @@ class SimpleMap extends Component {
 
     super(props)
     this.state = {
+      provider_id: 6,
       center: {
         lat: 37.8272,
         lng: -122.2913
@@ -17,25 +18,66 @@ class SimpleMap extends Component {
     }
   }
 
+
+  componentDidMount () {
+    let result = this.props.locations.filter(obj=>{
+      return obj.id === 6
+    })
+
+    let newCenter = {
+      center: {
+        lat: result[0].geolocation[0],
+        lng: result[0].geolocation[1]
+      }
+  
+    }
+    this.setState(newCenter);
+
+  }
+
   render() {
 
+      
+      const Markers = this.state.locations.map((marker, index) => {
 
-      const Markers = this.state.locations.map((marker, index) => (
-        <LocationMarker
-          // required props
-          key={marker['id']}
-          lat={marker['geolocation'][0]}
-          lng={marker['geolocation'][1]}
-          tesxt={marker['provider_name']}
-          // any user props
-          //showBallon={index + rowFrom === this.props.openBallonIndex}
-          //onCloseClick={this._onBalloonCloseClick}
-          //hoveredAtTable={index + rowFrom === this.props.hoveredRowIndex}
-          //scale={getScale(index + rowFrom, this.props.visibleRowFirst, this.props.visibleRowLast, K_SCALE_NORMAL)}
-          //{...markerDescriptions[marker.get('type')]}
-           //marker={marker}
-          />
-      ));
+        if(marker['id']!==this.state.provider_id) {
+          return (
+            <LocationMarker
+            // required props
+            key={marker['id']}
+            lat={marker['geolocation'][0]}
+            lng={marker['geolocation'][1]}
+            text={marker['provider_name']}
+            // any user props
+            //showBallon={index + rowFrom === this.props.openBallonIndex}
+            //onCloseClick={this._onBalloonCloseClick}
+            //hoveredAtTable={index + rowFrom === this.props.hoveredRowIndex}
+            //scale={getScale(index + rowFrom, this.props.visibleRowFirst, this.props.visibleRowLast, K_SCALE_NORMAL)}
+            //{...markerDescriptions[marker.get('type')]}
+             //marker={marker}
+            />
+          )
+      } else {
+        return (
+             <LocationMarker
+            // required props
+            key={marker['id']}
+            lat={marker['geolocation'][0]}
+            lng={marker['geolocation'][1]}
+            provider={true}
+            // any user props
+            //showBallon={index + rowFrom === this.props.openBallonIndex}
+            //onCloseClick={this._onBalloonCloseClick}
+            //hoveredAtTable={index + rowFrom === this.props.hoveredRowIndex}
+            //scale={getScale(index + rowFrom, this.props.visibleRowFirst, this.props.visibleRowLast, K_SCALE_NORMAL)}
+            //{...markerDescriptions[marker.get('type')]}
+             //marker={marker}
+            />
+
+          )
+
+      }
+      });
 
     return (
       <div style={{ height: '100vh', width: '100%' }}>
