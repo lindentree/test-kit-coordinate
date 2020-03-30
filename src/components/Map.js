@@ -13,11 +13,30 @@ class SimpleMap extends Component {
         lng: -122.2913
       },
       zoom: 9,
-      locations: []
+      locations: this.props.locations
     }
   }
 
   render() {
+
+
+      const Markers = this.state.locations.map((marker, index) => (
+        <LocationMarker
+          // required props
+          key={marker['id']}
+          lat={marker['geolocation'][0]}
+          lng={marker['geolocation'][1]}
+          tesxt={marker['provider_name']}
+          // any user props
+          //showBallon={index + rowFrom === this.props.openBallonIndex}
+          //onCloseClick={this._onBalloonCloseClick}
+          //hoveredAtTable={index + rowFrom === this.props.hoveredRowIndex}
+          //scale={getScale(index + rowFrom, this.props.visibleRowFirst, this.props.visibleRowLast, K_SCALE_NORMAL)}
+          //{...markerDescriptions[marker.get('type')]}
+           //marker={marker}
+          />
+      ));
+
     return (
       <div style={{ height: '100vh', width: '100%' }}>
         <GoogleMapReact
@@ -25,12 +44,8 @@ class SimpleMap extends Component {
           defaultCenter={this.state.center}
           defaultZoom={this.state.zoom}
         >
-        <LocationMarker 
-          lat={37.632780} 
-          lng={-122.064390} 
-          text={'COVID-19 Testing Center'} 
-        />
-      
+        {Markers}
+       
         </GoogleMapReact>
       </div>
     );

@@ -11,14 +11,14 @@ class ProviderDashboard extends Component {
     super(props)
     this.state = {
       id: null,
-      locations:TestProviders
+      locations: TestProviders
     }
   }
 
   render() {
     return (
         <div>
-            <SimpleMap>
+            <SimpleMap locations={this.state.locations}>
             </SimpleMap>
 
         </div>        
