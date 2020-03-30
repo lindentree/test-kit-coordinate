@@ -1,17 +1,18 @@
 const mongoose = require('mongoose');
 
 const providers = mongoose.Schema({
-  id: Number, //user input
-  provider_name: String,
+  providerId: Number, //user input
+  providerName: String,
   address: String,
   email: String,
-  phone_number: String,
-  operating_hours: Array,
+  phoneNumber: String,
+  operatingHours: Array,
   geolocation: Array,
-  tests_available: Number,
-  testing_capacity: Array, //red green, yellow
-  testing_criteria: Array, //severity
-  miscellaneous_materials: Array
+  testsAvailable: Number,
+  currentStatus: String,
+  testCapacity: String, //red green, yellow
+  testCriteria: String, //severity
+  miscellaneousMaterials: Array
 });
 
 const Provider = mongoose.model('Provider', providers);

@@ -1,17 +1,25 @@
 import React from 'react';
 import axios from 'axios';
-import styled from 'styled-components';
+import {Button, Container, H1, Input, Form, Label, Select} from './style.js';
+
 
 class ProviderForm extends React.Component {
   constructor (props) {
     super(props);
     this.state = {
-      testAmounts: '',
-      facilityName: '',
+      providerId: '',
+      providerName: '',
       address: '',
+      email: '',
       phoneNumber: '',
-      providerList: []
-    }
+      operatingHours: '',
+      geolocation: '',
+      testsAvailable: '',
+      currentStatus: '',
+      testCapacity: '',
+      testCriteria: '',
+      miscellaneousMaterials: ''
+    };
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -25,113 +33,83 @@ class ProviderForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     console.log('this.state:', this.state);
-
-    let {testAmounts, facilityName, address, phoneNumber} = this.state;
-    let data = {testAmounts, facilityName, address, phoneNumber};
+    let {providerId, providerName, address, email, phoneNumber, operatingHours, geolocation, testsAvailable, currentStatus, testCapacity, testCriteria, miscellaneousMaterials} = this.state;
+    let data = {providerId, providerName, address, email, phoneNumber, operatingHours, geolocation, testsAvailable, currentStatus, testCapacity, testCriteria, miscellaneousMaterials};
     let headers = {'Content-Type': 'application/json'}
 
     axios.post('http://localhost:8080/addProvider/', data, {headers: headers})
       .then(res => {
-        this.setState({
-          testAmounts: testAmounts,
-          facilityName: '',
-          address: '',
-          phoneNumber: '',
+        console.log('axios.post:', data);
 
-        })
+      })
+      .catch(err => {
+        console.log('fail to post:', err);
       })
 
     e.target.reset();
   }
 
-
   render() {
     return (
       <Container>
-      <H1>Facility Info Content:</H1>
+        <H1>Provider Info Content:</H1>
+
         <Form onSubmit={this.handleSubmit}>
-          <Label>Test Amounts</Label>
-          <Input
-            type="number"
-            name="testAmounts"
-            onChange={this.handleInputChange}
+          <Label>Provider Id:</Label>
+          <Input type="text" name="providerId" value ={this.state.providerId} onChange={this.handleInputChange}
           />
-          <Label>Facility Name:</Label>
-          <Input
-            type="text"
-            name="facilityName"
-            onChange={this.handleInputChange}
+
+          <Label>Provider Name:</Label>
+          <Input type="text" name="providerName" value ={this.state.providerName} onChange={this.handleInputChange}
           />
+
           <Label>Address:</Label>
-          <Input
-            type="text"
-            name="address"
-            onChange={this.handleInputChange}
-          />
+          <Input type="text" name="address" value ={this.state.address} onChange={this.handleInputChange} />
+
+          <Label>Email:</Label>
+          <Input type="email" name="email" value ={this.state.email} onChange={this.handleInputChange} />
+
           <Label>Phone Number:</Label>
-          <Input
-            type="number"
-            name="phoneNumber"
-            onChange={this.handleInputChange}
-          />
-          <Button type="submit" value="submit">Submit</Button>
+          <Input type="number" name="phoneNumber" value ={this.state.number} onChange={this.handleInputChange} />
+
+          <Label>Operating Hours:</Label>
+          <Input type="text" name="operatingHours" onChange={this.handleInputChange} />
+
+          <Label>Tests Available:</Label>
+          <Input type="text" name="testsAvailable" value ={this.state.testsAvailable} onChange={this.handleInputChange} />
+
+          <Label>Geolocation:</Label>
+          <Input type="text" name="geolocation" value ={this.state.geolocation} onChange={this.handleInputChange} />
+
+          <Label>Current Status:</Label>
+          <Input type="text" name="currentStatus" onChange={this.handleInputChange} />
+
+          <Label>Test Capacity:</Label>
+          <Select value={this.state.testCapacity} onChange={this.handleInputChange}>
+            <option value="low">Low</option>
+            <option value="medium">Medium</option>
+            <option value="high">High</option>
+          </Select>
+
+          <Label>Test Criteria:</Label>
+          <Select value={this.state.testCapacity} onChange={this.handleInputChange}>
+            <option value="low" >Priority 1</option>
+            <option value="medium" >Priority 2</option>
+            <option value="high" >Priority 3</option>
+          </Select>
+
+          <Label>Miscellaneous materials:</Label>
+          <Select value={this.state.miscellaneousMaterials} onChange={this.handleInputChange}>
+            <option value="swap">Swap</option>
+            <option value="glove">Glove</option>
+            <option value="samples">Samples</option>
+          </Select>
+
+          <Button type="submit" value="submit"> Submit </Button>
         </Form>
       </Container>
-    )
+    );
   }
 }
 
 export default ProviderForm;
-
-
-const Button = styled.button`
-  background-color: #4caf50; /* Green */
-  border: none;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  border-radius: 4px;
-  font-size: 16px;
-  align: center;
-`
-
-const Container = styled.div`
-  width: 50%;
-  align: center;
-  margin: auto;
-  padding: 50px;
-`
-
-const H1 = styled.h1`
-  text-align: center;
-`
-
-const Input = styled.input`
-  width: 100%;
-  padding: 12px 20px;
-  margin: 24px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-  background-color: white;
-`
-
-const Form = styled.form`
-  border-radius: 5px;
-  background-color: #f2f2f2;
-  padding: 20px;
-`
-
-const Label = styled.label`
-  float: left;
-`
-
-
-/*
-<Button type="submit" value="submit">Direct</Button>
-<Button type="submit" value="submit">Request</Button>
-<Button type="submit" value="submit">Contact</Button>
-*/
