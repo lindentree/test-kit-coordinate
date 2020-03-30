@@ -5,7 +5,7 @@ import UserForm from './components/UserForm';
 import ProviderForm from './components/ProviderForm';
 import EmailForm from './components/ContactForm';
 import LandingPage from './components/LandingPage';
-
+import ProviderInfo from './components/ProviderInfo';
 
 class App extends React.Component {
   constructor(props) {
@@ -32,7 +32,7 @@ class App extends React.Component {
     return (
       <div className="App">
 
-        <LandingPage />
+        <ProviderInfo />
 
         <p> {this.state.apiResponse}</p>
       </div>
