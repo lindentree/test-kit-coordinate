@@ -14,7 +14,8 @@ class SimpleMap extends Component {
         lng: -122.2913
       },
       zoom: 9,
-      locations: this.props.locations
+      locations: this.props.locations,
+      show: false
     }
   }
 
@@ -35,6 +36,11 @@ class SimpleMap extends Component {
 
   }
 
+  _onChildClick = (key, childProps) => {
+    this.setState({show: !this.state.show})
+  }
+
+
   render() {
 
       
@@ -48,6 +54,7 @@ class SimpleMap extends Component {
             lat={marker['geolocation'][0]}
             lng={marker['geolocation'][1]}
             text={marker['provider_name']}
+            show={this.state.show}
             // any user props
             //showBallon={index + rowFrom === this.props.openBallonIndex}
             //onCloseClick={this._onBalloonCloseClick}
@@ -85,6 +92,7 @@ class SimpleMap extends Component {
           bootstrapURLKeys={{ key: process.env.REACT_APP_API_KEY }}
           defaultCenter={this.state.center}
           defaultZoom={this.state.zoom}
+          onChildClick={this._onChildClick}
         >
         {Markers}
        

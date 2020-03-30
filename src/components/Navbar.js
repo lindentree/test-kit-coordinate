@@ -8,16 +8,11 @@ const Navbar =() => {
 
   return (
     <NavContainer>
-    <Title>COVID-19 Testing Location Insights</Title>
+    <Title>COVID-19 TestLine</Title>
       <Ul>
         <Li>
           <NavLink to="/" style={{ ...underline, ...textColor }}>
             Home
-          </NavLink>
-        </Li>
-        <Li>
-          <NavLink to="UserForm" style={{ ...underline, ...textColor }}>
-            User
           </NavLink>
         </Li>
         <Li>

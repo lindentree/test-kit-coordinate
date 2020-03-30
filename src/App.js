@@ -32,7 +32,7 @@ class App extends React.Component {
     return (
       <div className="App">
 
-        <ProviderInfo />
+        <LandingPage/>
 
         <p> {this.state.apiResponse}</p>
       </div>

@@ -4,6 +4,7 @@ import Navbar from './Navbar';
 import UserForm from './UserForm';
 import ProviderForm from './ProviderForm';
 import ProviderDashboard from './ProviderDashboard';
+import ProviderUpdateForm from './ProviderUpdateForm';
 import ContactForm from './ContactForm';
 import styled from 'styled-components';
 import {BrowserRouter, Route, Link, NavLink} from 'react-router-dom';
